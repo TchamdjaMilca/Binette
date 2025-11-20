@@ -22,6 +22,7 @@ app.register_blueprint(bp_compte,url_prefix='/compte')
 
 # Faire la commande suivante pour générer une chaîne aléatoire :
 # python -c "import secrets; print(secrets.token_hex())
+#la vie est dure.
 app.secret_key =os.getenv('SECRET_SESSION') 
 
 
@@ -37,6 +38,6 @@ def index():
 def non_autorise(e):
     app.logger.exception(e)
     return redirect('/')
-"
+
 if __name__ == '__main__':
     app.run(debug=True)
